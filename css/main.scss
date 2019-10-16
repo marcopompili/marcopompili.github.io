@@ -1,0 +1,76 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@charset "utf-8";
+
+$spacing-unit: 15px;
+
+@import "base", "syntax-highlighting";
+
+#side-col {
+    .fixed-wrapper {
+        top: 0; bottom: 0;
+        left: 1%; right: 76%;
+        position: fixed;
+        padding: 3rem 1.5rem;
+    }
+
+    a:hover {
+        color: $white-ter;
+    }
+
+    ul.social-links {
+        display: inline-flex;
+
+        li {
+            padding-right: 15px;
+            a {
+                color: $info;
+            
+                &:hover {
+                    color: $white-ter;
+                }
+            }
+        }
+    }
+
+    #main-nav {
+        margin-bottom: 20px;
+    }
+}
+
+.post-preview {
+    margin: 30px 0;
+    padding: 15px 10px;
+    border-bottom: dashed 1px;
+
+    a:hover {
+        color: $cyan;
+    }
+
+    p.title a:hover {
+        text-decoration: underline dashed;
+    }
+
+    footer ul {
+        display: inline-flex;
+
+        li {
+            padding: 0 15px;
+        }
+    }
+}
+
+ul.post-tags {
+    margin-top: 30px;
+}
+
+ul#post-categories {
+    display: inline-flex;
+    margin-bottom: 15px;
+
+    li {
+        padding-right: 15px;
+    }
+}

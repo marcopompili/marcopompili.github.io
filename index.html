@@ -1,0 +1,31 @@
+---
+layout: default
+---
+<h1 class="title is-size-1 deflicker">Posts</h1>
+{% for post in site.posts %}
+<article class="post-preview">
+    <p class="title is-size-5">
+        <a href="{{ post.url | prepend: site.baseurl }}" class="l33t">{{ post.title }}</a> <small
+            class="is-size-6 has-text-grey-light">{{ post.date | date: "%b %-d, %Y" }}</small>
+    </p>
+    <p class="subtitle has-text-grey">
+        by {{ post.author }}
+    </p>
+    <div class="content">
+        {{ post.excerpt }}
+    </div>
+    <footer>
+        <ul>
+            {% if post.repo %}
+            <li>
+                <a href="//github.com/{{ site.github_username }}/{{ post.repo }}">Git from <i class="fab fa-github"></i></a>
+            </li>
+            {% endif %}
+            <li>
+                <a href="//twitter.com/intent/tweet?text=Check Out {{ post.title }} at {{ post.url | prepend: site.url }}">Share on <i class="fab fa-twitter"></i></a>
+            </li>
+        </ul>
+    </footer>
+</article>
+{% endfor %}
+<p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>

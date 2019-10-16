@@ -1,0 +1,30 @@
+---
+layout: compress
+---
+<!DOCTYPE html>
+<html>
+{% include head.html %}
+
+<body>
+  <div class="columns">
+    <header id="side-col" class="column is-one-quarter has-background-dark">
+      {% include post_header.html %}
+    </header>
+    <article class="column section" itemscope itemtype="http://schema.org/BlogPosting">
+      <ul id="post-categories">
+        {% for category in page.categories %}
+        <li>
+          <span class="has-text-info">/</span> {{ category }}
+        </li>
+        {% endfor %}
+      </ul>
+      <section class="content" itemprop="articleBody">
+        {{ content }}
+      </section>
+    </article>
+  </div>
+  {% include footer.html %}
+  {% include scripts.html %}
+</body>
+
+</html>

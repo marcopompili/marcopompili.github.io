@@ -1,0 +1,31 @@
+<div class="fixed-wrapper">
+    <a class="deflicker" href="{{ site.baseurl }}/">{{ site.title }}</a>
+    <h1 class="title has-text-white-ter" itemprop="name headline">{{ page.title }}</h1>
+    <h2 class="subtitle has-text-white-ter" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        by {% if page.author %} {{ page.author }} {% else %} Anonymous {% endif %}
+    </h2>
+    <ul class="has-text-white-ter">
+        <li>
+            <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+                Published on {{ page.date | date: "%b %-d, %Y" }}
+            </time>
+        </li>
+    </ul>
+    <ul class="post-tags">
+        <li class="tags has-addons">
+            <span class="tag"><i class="fas fa-hourglass-half"></i></span>
+            <span class="tag is-info">{% include reading_time.html %}</span>
+        </li>
+        {% if page.repo %}
+        <li class="tags has-addons">
+            <span class="tag"><i class="fab fa-github"></i></span>
+            <a class="tag is-link" href="//github.com/{{ site.github_username }}/{{ page.repo }}">{{ page.repo }}</a>
+        </li>
+        <li>
+            <a href="//travis-ci.org/{{ site.github_username }}/{{ page.repo }}">
+                <img src="//travis-ci.org/{{ site.github_username }}/{{ page.repo }}.svg?branch=master" alt="">
+            </a>
+        </li>
+        {% endif %}
+    </ul>
+</div>
